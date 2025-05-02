@@ -14,23 +14,10 @@ function checkTriangleType() {
   const value2 = parseInt(document.getElementById("value-2").value);
 
   // process
-
-  for (let i = 1; i < (value2 + 1); i++) {
-    text += "The number is " + i + "<br>";
+    let product = 0;
+    for (let i = 0; i < value2; i++) {
+      product += value1;
+    }
+  document.getElementById("result").innerText += `${value1} x ${value2} = ${product}`;
   }
-
-
-  if (sumOfAngles != 180 || (lengthA + lengthB <= lengthC || lengthA + lengthC <= lengthB || lengthB + lengthC <= lengthA)) {
-    document.getElementById("result").innerText = "The triangle is not a real triangle.";
-
-  } else if (lengthA == lengthB && lengthB == lengthC) {
-    document.getElementById("result").innerText = "The triangle is equilateral.";
-
-  } else if (lengthA !== lengthB && lengthB !== lengthC && lengthA !== lengthC) {
-    document.getElementById("result").innerText = "The triangle is scalene.";
-
-  } else {
-    document.getElementById("result").innerText = "The triangle is isoceles.";
-  }
-}
 
