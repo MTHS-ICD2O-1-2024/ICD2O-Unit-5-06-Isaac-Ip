@@ -18,6 +18,6 @@ function checkTriangleType() {
     for (let i = 0; i < value2; i++) {
       product += value1;
     }
-  document.getElementById("result").innerText += `${value1} x ${value2} = ${product}`;
+  document.getElementById("result").innerText = `${value1} x ${value2} = ${product}`;
   }
 
