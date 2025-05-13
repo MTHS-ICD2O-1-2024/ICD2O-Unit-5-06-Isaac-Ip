@@ -14,10 +14,20 @@ function checkTriangleType() {
   const value2 = parseInt(document.getElementById("value-2").value);
 
   // process
-    let product = 0;
-    for (let i = 0; i < value2; i++) {
-      product += value1;
-    }
-  document.getElementById("result").innerText = `${value1} x ${value2} = ${product}`;
+  let product = 0;
+  let counter = 0;
+
+  while (counter < Math.abs(value2)) {
+    product += Math.abs(value1);
+    counter++;
+  }
+
+  // Adjust for negative numbers
+  if ((value1 < 0 && value2 > 0) || (value1 > 0 && value2 < 0)) {
+    product = -product;
+  }
+
+  // output
+  document.getElementById("result").innerText += `${value1} x ${value2} = ${product}`;
   }
 
